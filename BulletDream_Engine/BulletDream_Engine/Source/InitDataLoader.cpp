@@ -30,6 +30,9 @@ bool InitDataLoader::LoadFile(const char* path) {
 				else if (configname == "resolution_height") {
 					resolutionHeight = atoi(configValue.c_str());
 				}
+				else if (configname == "window_title") {
+					window_title = configValue.c_str();
+				}
 			}
 		}
 		fs.close();

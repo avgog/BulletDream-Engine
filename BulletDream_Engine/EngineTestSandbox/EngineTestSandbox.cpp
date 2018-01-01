@@ -1,7 +1,3 @@
-// EngineTestSandbox.cpp : Defines the entry point for the console application.
-//
-//#include <>
-
 #include <SFML/System.hpp>
 #include <SFML/Graphics.hpp>
 
@@ -30,6 +26,7 @@ void gameStartup() {
 		std::cout << "player.png doesnt exists" << std::endl;
 	}
 
+	engine->initialise(playerEntity);
 }
 
 

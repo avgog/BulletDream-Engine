@@ -74,6 +74,7 @@ void Engine::run() {
 	int framerateLimit = 60;
 	int res_width = 1280;
 	int res_height = 720;
+	const char* windowTitle = "Bulletdream engine application";
 
 	
 	InitDataLoader engineConfig;
@@ -81,12 +82,13 @@ void Engine::run() {
 		framerateLimit = engineConfig.framerateLimit;
 		res_width = engineConfig.resolutionWidth;
 		res_height = engineConfig.resolutionHeight;
+		windowTitle = engineConfig.window_title.c_str();
 	}
 	else {
 		std::cout << "failed to read Resources/engineInit.txt." << std::endl;
 	}
 
-	sf::RenderWindow window(sf::VideoMode(res_width, res_height), "Bulletdream engine application");
+	sf::RenderWindow window(sf::VideoMode(res_width, res_height), windowTitle);
 	window.setFramerateLimit(framerateLimit);
 	this->mainWindow = &window;
 	RenderSystem renderSystem;
@@ -96,7 +98,6 @@ void Engine::run() {
 		Time::update();
 		Input::update();
 		updateComponents(); //update alle componenten
-		//renderScene(window); //teken sprites op het scherm
 		renderSystem.update(this);
 
 		if (Input::getKey(KeyCode::Escape)) {

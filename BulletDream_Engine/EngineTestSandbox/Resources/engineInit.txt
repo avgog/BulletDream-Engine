@@ -1,0 +1,4 @@
+framerate_limit: 30
+resolution_width: 1280
+resolution_height: 720
+window_title: this title is different (2)
