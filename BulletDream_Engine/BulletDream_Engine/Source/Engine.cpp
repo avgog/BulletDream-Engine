@@ -68,9 +68,6 @@ GameObject* Engine::initialise(GameObject& obj) {
 void Engine::run() {
 	std::cout << "Running engine..." << std::endl;
 
-	
-
-		
 	int framerateLimit = 60;
 	int res_width = 1280;
 	int res_height = 720;
